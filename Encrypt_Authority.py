@@ -160,7 +160,6 @@ class Encrypt_d(wx.Frame):
         self.button_decode = wx.Button(self.panel,label="解密", pos=(pos_x_2/2,420), size=(90, height))
 
         # 绑定事件
-        # self.button_key.Bind(wx.EVT_BUTTON,self.create_key)
         self.button_open_1.Bind(wx.EVT_BUTTON,self.open_1)
         self.button_open_2.Bind(wx.EVT_BUTTON,self.open_2)
         self.button_encode.Bind(wx.EVT_BUTTON,self.encode)
@@ -173,7 +172,7 @@ class Encrypt_d(wx.Frame):
         if(self.encrypt_path.GetValue() == ""):
             wx.MessageBox("请先选择需要加密的文件", "提示消息", wx.OK | wx.YES_DEFAULT) # 提示框
             return
-        if self.encrypt_d_chioce == 0:
+        if self.encrypt_d_chioce.GetSelection()==0:
             self.des_encode()
         else :
             self.aes_encode()
